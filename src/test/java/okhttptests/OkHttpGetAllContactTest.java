@@ -32,6 +32,7 @@ public class OkHttpGetAllContactTest {
         }else {
             ErrorDto errorDto = gson.fromJson(response.body().string(),ErrorDto.class);
             System.out.println(errorDto.getMessage()+errorDto.getCode());
+
         }
     }
 }
