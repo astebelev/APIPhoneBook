@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Builder
 @ToString
-public class GetAllContactsDto {
+public class GetAllContactDto {
     List<ContactDto> contacts;
 
 }

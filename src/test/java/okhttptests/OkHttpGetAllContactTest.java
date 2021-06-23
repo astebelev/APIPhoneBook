@@ -4,7 +4,7 @@ package okhttptests;
 import com.google.gson.Gson;
 import dto.ContactDto;
 import dto.ErrorDto;
-import dto.GetAllContactsDto;
+import dto.GetAllContactDto;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -24,8 +24,8 @@ public class OkHttpGetAllContactTest {
                 .build();
         Response response = client.newCall(request).execute();
         if (response.isSuccessful()){
-            GetAllContactsDto getAllContactsDto = gson.fromJson(response.body().string(),GetAllContactsDto.class);
-        for (ContactDto contact: getAllContactsDto.getContacts()){
+            GetAllContactDto getAllContactDto = gson.fromJson(response.body().string(), GetAllContactDto.class);
+        for (ContactDto contact: getAllContactDto.getContacts()){
             System.out.println(contact.getId() + "***"+ contact.getName() +"***");
             System.out.println("===========================");
         }
